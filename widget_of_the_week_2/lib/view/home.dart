@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:lottie/lottie.dart';
+import 'package:widget_of_the_week_2/view/widget/button.dart';
+import 'package:widget_of_the_week_2/view/widget/text.dart';
 
 class Home extends StatefulWidget {
   const Home({Key? key}) : super(key: key);
@@ -59,40 +61,29 @@ class _HomeState extends State<Home> with TickerProviderStateMixin {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     const SizedBox(height: 50),
-                    const Text(
-                      "We bring your product to you",
-                      style: TextStyle(
-                        fontWeight: FontWeight.bold,
-                        fontSize: 30,
-                        color: Colors.white,
-                      ),
+                    const TextView(
+                      bold: true,
+                      size: 30.0,
+                      text: "We bring your product to you",
                     ),
                     const SizedBox(height: 20),
-                    const Text(
-                      "Lorito Deliveries is a non-real world company used for testing.",
-                      style: TextStyle(
-                        fontWeight: FontWeight.normal,
-                        fontSize: 20,
-                        color: Colors.white,
-                      ),
+                    const TextView(
+                      bold: false,
+                      size: 20.0,
+                      text:
+                          "Lorito Deliveries is a non-real world company used for testing.",
                     ),
                     const SizedBox(height: 30),
                     Padding(
                       padding: const EdgeInsets.all(8.0),
                       child: Align(
                         alignment: Alignment.bottomRight,
-                        child: Container(
-                          decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(50),
-                            border: Border.all(
-                              color: Colors.white,
-                            ),
-                          ),
-                          padding: const EdgeInsets.all(20.0),
-                          child: const Icon(
+                        child: Button(
+                          icon: const Icon(
                             Icons.arrow_forward_ios_outlined,
                             color: Colors.white,
                           ),
+                          onTap: () {},
                         ),
                       ),
                     ),
@@ -136,7 +127,7 @@ class _HomeState extends State<Home> with TickerProviderStateMixin {
                       "assets/animation/food.json",
                     ),
                   ),
-                  const SizedBox(height: 10),
+                  const SizedBox(height: 20),
                   Center(
                     child: AnimatedOpacity(
                       duration: const Duration(seconds: 1),
